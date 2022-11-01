@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block menu_superior %}
+      <!--Aqui se incluye el menu superior-->
+      {% include "menu_superior.html" %}
+    
+      {% endblock%}
+
+
+    
+    
+    
+
+    
+    {% block contenedor %} 
+
+    <div id="layoutSidenav">
+    
+        <!--Aqui se incluye el menu lateral-->
+        {% include "menu_dashboar.html" with tema="index" subtema=""   %}
+
+
+        <div id="layoutSidenav_content">
+          <main>
+              <div class="container-fluid px-4">
+                
+                  
+                  
+              </div>
+          </main>
+
+
+          
+      </div>
+
+
+    </div>
+            
+          
+    {% endblock %}

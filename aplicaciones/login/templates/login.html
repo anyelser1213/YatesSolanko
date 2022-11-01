@@ -1,0 +1,98 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+  <title>Relancino - Login</title>
+  <meta name="author" content="AplCorporacion">
+
+  <!-- Bootstrap CSS -->  
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap-5.2.1-dist/css/bootstrap.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'login/css/login.css' %}">
+
+  <!-- Icono de la pagina -->
+  <link id="iconPagWeb" rel="shortcut icon" href="{% static 'principal/img/loteria.jpg' %}" type="image/x-icon">
+
+<style>
+  .abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.ocultarImagen{
+
+  display: none;
+}
+</style>
+
+  
+  
+
+
+</head>
+<body>
+
+  
+<div class="container  ">
+  <div class="row justify-content-center ">
+    <div class="col-md-3 offset-m-3  abs-center ">
+      
+      <div class=" card border border-dark ">
+
+          <form action="{% url 'login:login' %}" class="card-body cardbody-color  bg-dark" method="post">
+
+            {% csrf_token %}
+          <div class="text-center">
+            <img id="imagenLogin" src="" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-2 ocultarImagen"
+              width="200px" >
+          </div>
+          
+          
+            {% if messages %} 
+            <div class="alert alert-danger ">
+               {% for message in messages %} {{ message }} {% endfor %} 
+
+            </div>
+            {% endif %}
+
+          
+  
+
+              {% if form.errors %}
+                  
+                  {% for error in form.non_field_errors %}
+                      <div class="alert alert-danger">
+                          <strong>{{ error }}</strong>
+                      </div>
+                  {% endfor %}
+              {% endif %}
+
+          <div class="mb-3">
+              {{form.username}}
+          </div>
+          <div class="mb-3">
+            {{form.password}}
+          </div>
+          <div class="text-center"><button type="submit" class="btn btn-outline-secondary text-white px-5  ">Iniciar Sesion</button></div>
+          
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+  
+
+  
+
+
+
+
+  <script src="{% static 'login/js/cookiesDjango.js' %}"></script>
+  <script src="{% static 'login/js/imagenes_login.js' %}"></script>
+</body>
+</html>
