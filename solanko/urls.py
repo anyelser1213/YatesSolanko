@@ -22,6 +22,8 @@ urlpatterns = [
     path('', include('aplicaciones.principal.urls')),
     path('', include('aplicaciones.login.urls')),
     path('', include('aplicaciones.fondo_imagenes.urls')),
+    path('', include('aplicaciones.chats.urls')),
+    path('', include('aplicaciones.yates.urls')),
     #path('login', include('login.urls')),
 
 

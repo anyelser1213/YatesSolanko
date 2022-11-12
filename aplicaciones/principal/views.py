@@ -13,10 +13,11 @@ from django.views.generic import TemplateView, CreateView, UpdateView, DetailVie
 
 class Index(TemplateView):
 
-    template_name = "principal/index.html"
+    template_name = "principal/index2.html"
 
     def dispatch(self, request, *args, **kwargs):
 
+        """
         if request.user.is_anonymous:
             print("No estas autenticado, eres un usuario anonimo")
             return redirect("login:login")
@@ -27,17 +28,17 @@ class Index(TemplateView):
             print("usuario: ",request.user)
             print("usuario permisos: ",request.user.get_all_permissions())
             print(request.user.has_perm('src.ver_zulia'))
-            
+        
             
             #Aqui verificamos si el usuario esta activo para que ingrese
-            ''' 
+            
             if request.user.activo:   
                 print("Usuario activo y validado")
             else:
                 print("El usuario no esta activo")
                 messages.add_message(request, messages.INFO, "Usuario Inactivo")
                 return redirect("src:logout")
-            '''
+        """
 
             #return redirect("src:index")
             #print("Usuario ",request.user)

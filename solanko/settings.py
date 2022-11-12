@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'aplicaciones.principal',
     'aplicaciones.usuarios',
     'aplicaciones.fondo_imagenes',
+    'aplicaciones.chats',
+    'aplicaciones.yates',
 
     #Para api rest
     'rest_framework',
