@@ -2,6 +2,12 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 
+#Decoradores
+from django.views.decorators.csrf import csrf_protect
+
+#Traducciones
+from django.utils.translation import gettext as _
+
 
 
 #Clases para las plantillas
@@ -59,3 +65,13 @@ class Index(TemplateView):
         context = super().get_context_data(**kwargs)
         context['informacion'] = "Hola..."
 
+
+
+#Para pruebas
+@csrf_protect
+def home(request):
+     # Si estamos identificados devolvemos la portada
+    
+    contexto = {"Traduccion":_("Welcome to my site.")} 
+    print(_("Welcome to my site."))
+    return render(request, "principal/index3.html", contexto)

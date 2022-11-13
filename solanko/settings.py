@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+#from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _ #Nueva version en django 4.0
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  #encargado de escoger el lenguaje adecuado
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n', # Util para internacionalizacion
             ],
         },
     },
@@ -116,11 +120,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-es'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
 
-USE_I18N = True
+
+# esta carpeta la debemos crear nosotros
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
+
+TIME_ZONE = 'Ametica/Venezuela'
+
+USE_I18N = True #Internacionalizacion
+
+USE_L10N = True #Localizacion
 
 USE_TZ = True
 

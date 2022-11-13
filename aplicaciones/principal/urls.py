@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns #Pendiente con esto
 
 from . import views
 
@@ -10,6 +11,8 @@ urlpatterns = [
     #path('', views.Index.as_view(), name='index'),
     
     path('', views.Index.as_view() ,name="index"),
+    path('prueba', views.home ,name="prueba"),
+
 
 
 

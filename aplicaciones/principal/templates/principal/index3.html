@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  {% load i18n %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> Current language: {{ LANGUAGE_CODE }}  </h1>
+  
+
+  
+  <h1>{% trans "Español" %}</h1>
+  <h1> {% trans "Spanish" %}</h1>
+  <hr><hr>
+
+  <h1>{% trans "Services" %}</h1>
+  <h1>Probando cosas {{Traduccion}} ------  </h1>
+  <h1>{% trans '¡welcome!' %}</h1>
+</body>
+</html>
