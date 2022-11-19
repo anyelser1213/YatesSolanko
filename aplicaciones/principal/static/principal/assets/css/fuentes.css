@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "header_footer";
+    src: url(./fuentes/font/BRHendrix-Black.woff2);
+}
+
+@font-face {
+    font-family: "texto_principal";
+    src: url(./fuentes/lota-grotesque/Los_Andes_Lota_Grotesque_Thin.otf);
+}
+
+@font-face {
+    font-family: "titulos";
+    src: url(./fuentes/nexa-heavy-maisfontes/nexa-heavy.ttf);
+}
+
+
+
+
+
+.letra_header_footer{
+    font-family:"header_footer";
+    /*
+    font-size: 300%;
+    vertical-align: baseline;
+    font-weight: bold;
+    text-transform: none !important;
+    */
+  }
+
+
+.letra_texto_principal{
+    font-family:"texto_principal";
+    /*
+    font-size: 300%;
+    vertical-align: baseline;
+    font-weight: bold;
+    text-transform: none !important;
+    */
+  }
+
+  .letra_titulos{
+    font-family:"titulos";
+    /*
+    font-size: 300%;
+    vertical-align: baseline;
+    font-weight: bold;
+    text-transform: none !important;
+    */
+  }
