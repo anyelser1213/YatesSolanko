@@ -74,4 +74,4 @@ def home(request):
     
     contexto = {"Traduccion":_("Welcome to my site.")} 
     print(_("Welcome to my site."))
-    return render(request, "principal/index3.html", contexto)
+    return render(request, "principal/index2.html", contexto)
