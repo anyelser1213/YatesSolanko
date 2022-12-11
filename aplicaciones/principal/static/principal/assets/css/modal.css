@@ -1,0 +1,92 @@
+
+
+button {
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+  background-color: #0d506e;
+  color: #ffffffff;
+  padding: 20px 35px;
+ 
+  font-size: 1.2rem;
+  text-transform: uppercase;  
+  font-weight: 700;  
+  transition: box-shadow 0.25s ease-in-out;
+  box-shadow: 0px 0px 0 #fff;
+}
+
+button:hover {
+  box-shadow: 8px 8px 0 #fff;
+}
+
+dialog {
+  max-width: 650px;
+  padding: 40px 70px;
+  border: 0px solid #321c3b;
+  background-color: #FAFAFA;
+  margin-left: 585px;
+  margin-top: 70px;
+}
+
+dialog::backdrop {
+  
+}
+
+dialog p {
+  color: #321c3b;
+}
+
+dialog button {
+  box-shadow: 0px 0px 0 #ffff;
+}
+
+dialog button:hover {
+  box-shadow: 8px 8px 0 #000000;
+}
+
+figure {
+  border-radius: 0%;
+  display: block;
+
+
+}
+
+figure:after {
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 0px;
+  color: #fff;
+  content: attr(title);
+  opacity: 0;
+
+  transition: all .25s ease;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+figure[tooltip-dir="left"]:after {
+  left: auto;
+  right: 110%;
+}
+
+figure[tooltip-dir="bottom"]:after,
+figure[tooltip-dir="top"]:after {
+  left: 50%;
+    right: auto;
+
+  transform: translateX(-50%);
+}
+
+figure[tooltip-dir="bottom"]:after {
+  bottom: auto;
+  top: 110%;
+}
+
+figure[tooltip-dir="top"]:after {
+  bottom: 110%;
+  top: auto;
+}
+
+figure:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
