@@ -4,12 +4,12 @@ from django.conf.urls.static import static
 
 from . import views
 
-app_name ="base_principal"
+app_name ="usuarios"
 
 urlpatterns = [
     #path('', views.Index.as_view(), name='index'),
     
-    path('', views.index.as_view() ,name="index"),
+    path('registrar', views.registrar.as_view() ,name="registrarUsuario"),
 
 
 

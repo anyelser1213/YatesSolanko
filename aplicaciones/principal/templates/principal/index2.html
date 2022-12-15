@@ -181,12 +181,12 @@ google.load("scriptaculous", "1.9.0");
                                                       <ul>
                                                           <li>
                                                               <a
-                                                                  href="#"><i
+                                                                  href="{% url 'login:login' %}"><i
                                                                       class="fa fa-user"></i>Login</a>
                                                           </li>
                                                           <li>
                                                               <a
-                                                                  href="#"><i
+                                                                  href="{% url 'usuarios:registrarUsuario' %}"><i
                                                                       class="fa fa-group"></i>Register
                                                                   </a>
                                                           </li>
@@ -239,7 +239,7 @@ google.load("scriptaculous", "1.9.0");
               menu-item">Charter a Yatch</a>
           </li>
           <li class="has-dropdown" style="border-right: dotted 1px;">
-            <a href="login.html" data-toggle="dropdown" class="dropdown-toggle
+            <a href="{% url 'login:login' %}" data-toggle="dropdown" class="dropdown-toggle
               menu-item">Membership</a>
           </li>
         </ul>
@@ -322,11 +322,11 @@ google.load("scriptaculous", "1.9.0");
                     menu-item " style="Right: -27%;font-family: monospace;">Get started</a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="#">Login</a>
+                      <a href="{% url 'login:login' %}">Login</a>
                     </li>
 
                     <li>
-                      <a href="#">Register</a>
+                      <a href="{% url 'usuarios:registrarUsuario' %}">Register</a>
                     </li>
 
                   </ul>
@@ -523,10 +523,10 @@ google.load("scriptaculous", "1.9.0");
               </a>
             </li>
             <li>
-              <a class="menu-item" href="login.html">Login</a>
+              <a class="menu-item" href="{% url 'login:login' %}">Login</a>
             </li>
             <li>
-              <a class="menu-item" href="snippets.html">Register</a>
+              <a class="menu-item" href="{% url 'usuarios:registrarUsuario' %}">Register</a>
             </li>
           </ul>
         </div>

@@ -32,6 +32,7 @@ urlpatterns += i18n_patterns(
 
     path('', include('aplicaciones.principal.urls')),
     path('', include('aplicaciones.login.urls')),
+    path('', include('aplicaciones.usuarios.urls')),
     path('', include('aplicaciones.fondo_imagenes.urls')),
     path('', include('aplicaciones.chats.urls')),
     path('', include('aplicaciones.yates.urls')),
