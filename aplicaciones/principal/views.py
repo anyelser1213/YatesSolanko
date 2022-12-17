@@ -75,3 +75,12 @@ def home(request):
     contexto = {"Traduccion":_("Welcome to my site.")} 
     print(_("Welcome to my site."))
     return render(request, "principal/index2.html", contexto)
+
+
+@csrf_protect
+def about(request):
+     # Si estamos identificados devolvemos la portada
+    
+    contexto = {"Traduccion":_("Welcome to my site.")} 
+    print(_("Welcome to my site."))
+    return render(request, "principal/about.html", contexto)

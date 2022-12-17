@@ -11,7 +11,7 @@ urlpatterns = [
     #path('', views.Index.as_view(), name='index'),
     
     path('', views.Index.as_view() ,name="index"),
-    path('prueba', views.home ,name="prueba"),
+    path('about', views.about ,name="about"),
 
 
 
