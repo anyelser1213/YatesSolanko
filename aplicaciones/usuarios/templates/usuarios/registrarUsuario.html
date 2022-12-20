@@ -37,365 +37,322 @@
 
                                 </head>
                                 <body className='snippet-body'>
-                            <div class="container-login100" style="background-image: url('{% static 'principal/assets/images/bg-04.jpg' %}');">    
-                                <div class="container">
-                                 <div class="card"> 
-                                    <div class="form"> 
-                                        <div class="left-side">
-                                         <ul class="progres_bar"> 
-                                            <li>Personal Vitae</li>
-                                             <li>Verification code</li> 
-                                             <li>Location</li>
-                                              <li>Finish</li>
-                                         </ul> 
-                                     </div> 
-                                     <div class="right-side "> 
-                                        <div class="main active"> 
-                                            <div class="manage"> 
-                                                <h3>Create account</h3>
-                                                 <p> A verification code will be sent to your cell phone and email </p> 
+                                    <div class="container-login100" style="background-image: url('{% static 'principal/assets/images/bg-04.jpg' %}');">    
+                                        <div class="container">
+                                         <div class="card"> 
+                                            <div class="form"> 
+                                                <div class="left-side">
+                                                 <ul class="progres_bar"> 
+                                                    <li>Personal Vitae</li>
+                                                     <li>Verification code</li> 
+                                                   
+                                                      <li>Finish</li>
+                                                 </ul> 
                                              </div> 
-                                             <div class="input_div"> 
-                                                <div class="input_text">
-                                                 <input class="written_name" type="text" require required> 
-                                                 <label>First Name</label>
-                                                  </div> 
-                                                  <div class="input_text"> 
-                                                    <input type="text" required>
-                                                     <label>Last Name</label> 
-                                                 </div> 
-                                             </div>
-                                              <div class="input_div">
-                                               <div class="input_text"> 
-                                                <input type="text" require required>
-                                                 <label>Email</label> 
-                                             </div>
-                                              <div class="input_text">
-                                               <input type="number" require required> 
-                                               <label>Phone </label> 
-                                           </div>
-                                            </div>
-                                             <div class="input_div">
-                                              <div class="input_text">
-                                               <input class="pass_type" type="password" require required>
-                                                <label>Password</label> 
-                                                <i class="fa fa-eye-slash password_eye"></i>
-                                                 </div> 
-                                                 <div class="input_text">
-                                                  <input class="confirm_pass_type" type="password" require required> 
-                                                  <label>Confirm Password</label>
-                                                   <i class="fa fa-eye-slash con_eye"></i>
-                                                    </div>
+                                             <div class="right-side "> 
+                                                <div class="main active"> 
+                                                    <div class="manage"> 
+                                                        <h3>Create account</h3>
+                                                         <p> A verification code will be sent to your cell phone and email </p> 
                                                      </div> 
-                                                     <div class="agree"> 
-                                                        <span><i class="fa fa-check"></i></span>
-                                                         <p>I agree to the <a href="#"> Terms of Service</a>.</p>
-
+                                                     <div class="input_div"> 
+                                                        <div class="input_text">
+                                                         <input class="written_name" type="text" require required> 
+                                                         <label>First Name</label>
                                                           </div> 
-                                                          <div class="button step_1">
-                                                           <button class="next_btn">Next</button> 
-                                                       </div>
-                                                        </div>
-                                                         <div class="main">
-                                                          <div class="manage">
-                                                           <h3>A code has been sent to verify your account</h3>
-                                                            <p>A code has been sent to your mobile phone and to your email, please enter it</p>
+                                                          <div class="input_text"> 
+                                                            <input type="text" required>
+                                                             <label>Last Name</label> 
+                                                         </div> 
+                                                     </div>
+                                                      <div class="input_div">
+                                                       <div class="input_text"> 
+                                                        <input type="text" require required>
+                                                         <label>Email</label> 
+                                                     </div>
+                                                      <div class="input_text">
+                                                       <input type="number" require required> 
+                                                       <label>Phone </label> 
+                                                   </div>
+                                                    </div>
+                                                     <div class="input_div">
+                                                      <div class="input_text">
+                                                       <input class="pass_type" type="password" require required>
+                                                        <label>Password</label> 
+                                                        <i class="fa fa-eye-slash password_eye"></i>
+                                                         </div> 
+                                                         <div class="input_text">
+                                                          <input class="confirm_pass_type" type="password" require required> 
+                                                          <label>Confirm Password</label>
+                                                           <i class="fa fa-eye-slash con_eye"></i>
+                                                            </div>
                                                              </div> 
-                                                              
-                                                                
-                                                                  <div class="input_div"> 
-                                                               <div class="input_text"> 
-                                                                <input type="text" require required> 
-                                                                <label placeholder="- - - - -">Verification code</label>
-                                                                 </div>
+                                                             <div class="agree"> 
+                                                                <span><i class="fa fa-check"></i></span>
+                                                                 <p>I agree to the <a href="#"> Terms of Service</a>.</p>
+        
                                                                   </div> 
-                                                                  <div class="button step_2 m_top"> 
-                                                                    <button class="prev_btn">Previous</button>
-                                                                     <button class="next_btn">Next</button>
-                                                                      </div>
-                                                                       </div> 
-                                                                       <div class="main ">
-                                                                        <div class="manage"> 
-                                                                            <h3>Your location</h3>
-                                                                             <p></p> 
-                                                                         </div> 
-                                                                         <div class="input_div"> 
-                                                                            <div class="input_text"> 
-                                                                                <input type="text" require required>
-                                                                                 <label>Exact location where you live</label>
-                                                                                  </div> 
-                                                                              </div> 
-                                                                              <div class="input_div">
-                                                                               <div class="input_text">
-                                                                                <input type="text" required>
-                                                                                 <label>Village</label> 
-                                                                             </div>
-                                                                              <div class="input_text"> 
-                                                                                <input type="text" require required> 
-                                                                                <label>City</label> 
-                                                                            </div> 
-                                                                        </div> 
-                                                                        <div class="input_div">
-                                                                         <div class="input_text">
-                                                                          <input type="text" require required> 
-                                                                          <label>State</label> 
-                                                                      </div> 
-                                                                      <div class="input_text">
-                                                                       <input type="text" require required>
-                                                                        <label>Country</label>
-                                                                         </div> 
-                                                                     </div>
-                                                                      <div class="button step_2 step_3">
-                                                                       <button class="prev_btn">Previous</button>
-                                                                        <button class="next_btn">Next</button>
-                                                                         </div> 
+                                                                  <div class="button step_1">
+                                                                   <button class="next_btn">Next</button> 
+                                                               </div>
+                                                                </div>
+                                                                 <div class="main">
+                                                                  <div class="manage">
+                                                                   <h3>A code has been sent to verify your account</h3>
+                                                                    <p>A code has been sent to your email, please enter it</p>
                                                                      </div> 
-                                                                     <div class="main "> 
-                                                                        <div class="manage">
-                                                                         <h3>Last details</h3>
-                                                                          <p>Type "OK" and click the "Finish" button to finish creating the account to verify that you are not a robot.</p>
-                                                                           </div> 
-                                                                           <div class="input_div">
-                                                                            <div class="input_text">
-                                                                             <input type="text" require required>
-                                                                              <label>"Ok"</label>
-                                                                               </div> 
-                                                                             </div> 
-                                                                                <div class="agree_submit">
-                                                                                 <span><i class="fa fa-check"></i></span>
-                                                                                  <p>I hereby declare that information provided in the online registration form is true to the best of my knowledge and I accept motes,terms,disclaimer and policies by clicking "Finish" button.</p> 
-                                                                              </div> 
-                                                                              <div class="button step_2 step_4">
-                                                                                   <button class="prev_btn">Previous</button> 
-                                                                                   <button class="sbmt_btn">Finish</button>
-                                                                                    </div> 
-                                                                                </div> 
-                                                                                <div class="main ">
-                                                                                 <div class="manage"> 
-                                                                                    <h3>Congratulations 
-                                                                                        <span class="shown_name"></span>
-                                                                                    </h3> 
-                                                                                    <p>Your buisness account have been successfully registered.</p> 
-                                                                                </div> 
-                                                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                                                                 <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /> 
-                                                                                 <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                                                                                  </svg>
-                                                                                   <div class="h4_txt"> 
-                                                                                     </div> 
-                                                                                 </div> 
-                                                                             </div>
+                                                                      
+                                                                        
+                                                                          <div class="input_div"> 
+                                                                       <div class="input_text"> 
+                                                                        <input type="text" require required> 
+                                                                        <label placeholder="- - - - -">Verification code</label>
+                                                                         </div>
+                                                                          </div> 
+                                                                          <div class="button step_2 m_top"> 
+                                                                            <button class="prev_btn">Previous</button>
+                                                                             <button class="next_btn">Next</button>
                                                                               </div>
-                                                                               </div>
-
-</div>
-
-<script type='text/javascript' src='#'></script>
-
-<script type='text/javascript' src='#'></script>
-
-<script type='text/javascript' src='#'></script>
-
-<script type='text/javascript' src='#'></script>
-
-<script type='text/javascript'>
-                                
-    var next_click=document.querySelectorAll(".next_btn");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    var prev_click=document.querySelectorAll(".prev_btn");
-    var sbmt_click=document.querySelectorAll(".sbmt_btn");
-    var main_page=document.querySelectorAll(".main");
-    var p_bar =document.querySelectorAll(".progres_bar li");
-    var written_name=document.querySelector(".written_name");
-    var shown_name=document.querySelector(".shown_name");
-
-    let formnumber=0;
-
-    var passeye=document.querySelector(".password_eye");
-    var pass_type=document.querySelector(".pass_type");
-    var set_pass=document.querySelector(".password_eye");
-
-    var confirm_passeye=document.querySelector(".con_eye");
-    var confirm_pass_type=document.querySelector(".confirm_pass_type");
-    var confirm_set_pass=document.querySelector(".con_eye");
-
-    var tick=document.querySelector(".agree span");
-    tick.addEventListener('click',function(){
-        tick.classList.toggle('agree_green');
-    });
-
-    var tick_green=document.querySelector(".agree_submit span");
-    tick_green.addEventListener('click',function(){
-        tick_green.classList.toggle('agree_submit_green');
-    });
-
-
-    passeye.addEventListener('click',function(){
-
-    if(pass_type.type=="password"){
-    pass_type.type="text";
-    set_pass.classList.remove('fa-eye-slash');
-    set_pass.classList.add('fa-eye');
-    }
-    else{
-    pass_type.type="password";
-    set_pass.classList.add('fa-eye-slash');
-    set_pass.classList.remove('fa-eye');
-    }
-    });
-
-
-    confirm_passeye.addEventListener('click',function(){
-
-    if(confirm_pass_type.type=="password"){
-    confirm_pass_type.type="text";
-    confirm_set_pass.classList.remove('fa-eye-slash');
-    confirm_set_pass.classList.add('fa-eye');
-    }
-    else{
-    confirm_pass_type.type="password";
-    confirm_set_pass.classList.add('fa-eye-slash');
-    confirm_set_pass.classList.remove('fa-eye');
-    }
-    });
-
-
-
-    next_click.forEach(function(btn){
-    btn.addEventListener('click',function(){
-    if(!validate_form()){
-    return false;
-    }
-    formnumber++;
-    update_form();
-    progress_forward();
-    });
-    });
-
-    prev_click.forEach(function(btn){
-    btn.addEventListener('click',function(){
-    formnumber--;
-    update_form();
-    progress_backward();
-    });
-    });
-
-    sbmt_click.forEach(function(btn){
-    btn.addEventListener('click',function(){
-    if(!validate_form()){
-    return false;
-    }
-    formnumber++;
-    update_form();
-    shown_name.innerHTML=written_name.value;
-    });
-    });
-
-    function progress_forward(){
-    p_bar[formnumber].classList.add('active');
-    }
-
-    function progress_backward(){
-    var f_num = formnumber+1;
-    p_bar[f_num].classList.remove('active');
-    }
-
-
-
-    function update_form(){
-    main_page.forEach(function(main_pages){
-    main_pages.classList.remove('active');
-    });
-    main_page[formnumber].classList.add('active');
-    }
-
-    function validate_form(){
-    var validate=true;
-    var all_inputs=document.querySelectorAll(".main.active input");
-    all_inputs.forEach(function(inpt){
-    inpt.classList.remove('warning');
-    if(inpt.hasAttribute("require")){
-    if(inpt.value.length=="0"){
-    validate=false;
-    inpt.classList.add('warning');
-    }
-    }
-    });
-    return validate;
-}</script>
-                                
-<script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
-    myLink.addEventListener('click', function(e) {
-    e.preventDefault();
-});</script>
-                            
-                                </body>
+                                                                               </div> 
+                                                                                
+                                                                             <div class="main "> 
+                                                                                <div class="manage">
+                                                                                 <h3>Last details</h3>
+                                                                                  <p>Type "OK" and click the "Finish" button to finish creating the account to verify that you are not a robot.</p>
+                                                                                   </div> 
+                                                                                   <div class="input_div">
+                                                                                    <div class="input_text">
+                                                                                     <input type="text" require required>
+                                                                                      <label>"Ok"</label>
+                                                                                       </div> 
+                                                                                     </div> 
+                                                                                        <div class="agree_submit">
+                                                                                         <span><i class="fa fa-check"></i></span>
+                                                                                          <p>I hereby declare that information provided in the online registration form is true to the best of my knowledge and I accept motes,terms,disclaimer and policies by clicking "Finish" button.</p> 
+                                                                                      </div> 
+                                                                                      <div class="button step_2 step_4">
+                                                                                           <button class="prev_btn">Previous</button> 
+                                                                                           <button class="sbmt_btn">Finish</button>
+                                                                                            </div> 
+                                                                                        </div> 
+                                                                                        <div class="main ">
+                                                                                         <div class="manage"> 
+                                                                                            <h3>Congratulations 
+                                                                                                <span class="shown_name"></span>
+                                                                                            </h3> 
+                                                                                            <p>Your buisness account have been successfully registered.</p> 
+                                                                                        </div> 
+                                                                                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                                                                         <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /> 
+                                                                                         <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                                                          </svg>
+                                                                                           <div class="h4_txt"> 
+                                                                                             </div> 
+                                                                                         </div> 
+                                                                                     </div>
+                                                                                      </div>
+                                                                                       </div>
+        
+        </div>
+                                        <script type='text/javascript' src='#'></script>
+                                        <script type='text/javascript' src='#'></script>
+                                        <script type='text/javascript' src='#'></script>
+                                        <script type='text/javascript' src='#'></script>
+                                        <script type='text/javascript'>var next_click=document.querySelectorAll(".next_btn");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        var prev_click=document.querySelectorAll(".prev_btn");
+        var sbmt_click=document.querySelectorAll(".sbmt_btn");
+        var main_page=document.querySelectorAll(".main");
+        var p_bar =document.querySelectorAll(".progres_bar li");
+        var written_name=document.querySelector(".written_name");
+        var shown_name=document.querySelector(".shown_name");
+        
+        let formnumber=0;
+        
+        var passeye=document.querySelector(".password_eye");
+        var pass_type=document.querySelector(".pass_type");
+        var set_pass=document.querySelector(".password_eye");
+        
+        var confirm_passeye=document.querySelector(".con_eye");
+        var confirm_pass_type=document.querySelector(".confirm_pass_type");
+        var confirm_set_pass=document.querySelector(".con_eye");
+        
+        var tick=document.querySelector(".agree span");
+        tick.addEventListener('click',function(){
+            tick.classList.toggle('agree_green');
+        });
+        
+        var tick_green=document.querySelector(".agree_submit span");
+        tick_green.addEventListener('click',function(){
+            tick_green.classList.toggle('agree_submit_green');
+        });
+        
+        
+        passeye.addEventListener('click',function(){
+        
+        if(pass_type.type=="password"){
+        pass_type.type="text";
+        set_pass.classList.remove('fa-eye-slash');
+        set_pass.classList.add('fa-eye');
+        }
+        else{
+        pass_type.type="password";
+        set_pass.classList.add('fa-eye-slash');
+        set_pass.classList.remove('fa-eye');
+        }
+        });
+        
+        
+        confirm_passeye.addEventListener('click',function(){
+        
+        if(confirm_pass_type.type=="password"){
+        confirm_pass_type.type="text";
+        confirm_set_pass.classList.remove('fa-eye-slash');
+        confirm_set_pass.classList.add('fa-eye');
+        }
+        else{
+        confirm_pass_type.type="password";
+        confirm_set_pass.classList.add('fa-eye-slash');
+        confirm_set_pass.classList.remove('fa-eye');
+        }
+        });
+        
+        
+        
+        next_click.forEach(function(btn){
+        btn.addEventListener('click',function(){
+        if(!validate_form()){
+        return false;
+        }
+        formnumber++;
+        update_form();
+        progress_forward();
+        });
+        });
+        
+        prev_click.forEach(function(btn){
+        btn.addEventListener('click',function(){
+        formnumber--;
+        update_form();
+        progress_backward();
+        });
+        });
+        
+        sbmt_click.forEach(function(btn){
+        btn.addEventListener('click',function(){
+        if(!validate_form()){
+        return false;
+        }
+        formnumber++;
+        update_form();
+        shown_name.innerHTML=written_name.value;
+        });
+        });
+        
+        function progress_forward(){
+        p_bar[formnumber].classList.add('active');
+        }
+        
+        function progress_backward(){
+        var f_num = formnumber+1;
+        p_bar[f_num].classList.remove('active');
+        }
+        
+        
+        
+        function update_form(){
+        main_page.forEach(function(main_pages){
+        main_pages.classList.remove('active');
+        });
+        main_page[formnumber].classList.add('active');
+        }
+        
+        function validate_form(){
+        var validate=true;
+        var all_inputs=document.querySelectorAll(".main.active input");
+        all_inputs.forEach(function(inpt){
+        inpt.classList.remove('warning');
+        if(inpt.hasAttribute("require")){
+        if(inpt.value.length=="0"){
+        validate=false;
+        inpt.classList.add('warning');
+        }
+        }
+        });
+        return validate;
+        }</script>
+                                        <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+                                        myLink.addEventListener('click', function(e) {
+                                          e.preventDefault();
+                                        });</script>
+                                    
+                                        </body>
 
                                  <style>::-webkit-scrollbar {
                                   width: 8px;
@@ -448,7 +405,8 @@
     width: 40%;
     background-color: #fff;
     height: 100%;
-    background-image: url("assets/images/bg-05.jpg");
+    /*url('{% static 'principal/assets/images/bg-04.jpg' %}');*/
+    background-image: url("/static/principal/assets/images/bg-05.jpg");
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     display: flex;
