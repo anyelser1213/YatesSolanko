@@ -19,7 +19,7 @@ from django.views.generic import TemplateView, CreateView, UpdateView, DetailVie
 
 class Index(TemplateView):
 
-    template_name = "principal/index2.html"
+    template_name = "principal/index.html"
 
     def dispatch(self, request, *args, **kwargs):
 
@@ -74,7 +74,7 @@ def home(request):
     
     contexto = {"Traduccion":_("Welcome to my site.")} 
     print(_("Welcome to my site."))
-    return render(request, "principal/index2.html", contexto)
+    return render(request, "principal/index.html", contexto)
 
 
 @csrf_protect
