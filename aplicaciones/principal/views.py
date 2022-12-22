@@ -2,6 +2,12 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 
+#Para enviar mensajes a correos
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+
+
+
 #Decoradores
 from django.views.decorators.csrf import csrf_protect
 
