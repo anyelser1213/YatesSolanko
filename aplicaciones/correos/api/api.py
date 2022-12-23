@@ -5,10 +5,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from aplicaciones.usuarios.models import Usuarios
-from aplicaciones.usuarios.api.serializers import UsuariosSerializer
+from aplicaciones.usuarios.api.serializers import EmailSerializer
 
 @api_view(['GET','POST'])
-def verificar_email_api_view(request):
+def enviar_codigo_email_api_view(request):
 
 
     if request.method == 'GET':
