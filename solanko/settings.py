@@ -163,3 +163,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #Para el login
 LOGIN_URL = 'login:login'
 LOGIN_REDIRECT_URL = 'principal:index'
+
+
+
+#PARA EL ENVIO DE CORREOS(usando apl.corporacionve@gmail.com) 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'apl.corporacionve@gmail.com'
+EMAIL_HOST_PASSWORD = 'mydvkqwtpoxnedfo'

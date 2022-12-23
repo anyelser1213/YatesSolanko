@@ -10,6 +10,8 @@ urlpatterns = [
         
     #path('correoPrueba', views.registrar.as_view() ,name="correoPrueba"),
 
+    path('correoPrueba', views.enviar_email ,name="correoPrueba"),
+
 
 
     
