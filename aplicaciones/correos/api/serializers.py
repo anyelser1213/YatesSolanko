@@ -7,6 +7,6 @@ class EmailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuarios
         #fields = '__all__'
-        fields = ['status'] #cuando son campos especificos
+        fields = ['username'] #cuando son campos especificos
         
         #exclude

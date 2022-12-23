@@ -4,7 +4,7 @@
 var codido_recibido = 0;
 
 //Input para el codigo de verificacion del usuario
-var input_nombre = document.getElementById("codigo_verificacion");
+var input_codigo = document.getElementById("codigo_verificacion");
 
 
 //Input para el nombre del usuario

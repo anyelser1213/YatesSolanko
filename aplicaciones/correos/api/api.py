@@ -5,7 +5,15 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from aplicaciones.usuarios.models import Usuarios
-from aplicaciones.usuarios.api.serializers import EmailSerializer
+#from aplicaciones.usuarios.api.serializers import EmailSerializer
+
+
+#PARA EL ENVIO DE CORREOS
+from django.core.mail import send_mail
+from django.conf import settings
+
+#Para obtener numeros aleatorios
+import random
 
 @api_view(['GET','POST'])
 def recibir_codigo_email_api_view(request):
@@ -22,22 +30,36 @@ def recibir_codigo_email_api_view(request):
         print("datos",request.data, "Usuario: ",request.user.username,request.user.id)
         
         correo = str(request.data.get('correo'))
-        comprobante = str(request.data.get('comprobante'))
 
-        #Datos que enviaremos
-        datos = {"Mensaje":"Exitoso"}
-
-        #Elemento = Usuarios.objects.get(id=id_comprobante)
-       # Elemento.status="Pagado"
-        #Elemento.save()
         
-        print("Elemento Jugada: ",correo)
+
+        codigo_random = random.randint(100000, 900000)
+
+        print("El codigo generado es: ",codigo_random)
+        Titulo = 'Codigo de registro'
+        Mensaje_a_enviar = 'Ingrese este codigo en el registro para validar su email '+str(codigo_random)
+
+        #Para pruebas
+        #email_from = 'anyelserperez@gmail.com'
+        #recipient_list = [settings.EMAIL_HOST_USER,"anyelserperez@gmail.com"]
+
+        #Para envios reales   
+        email_from = settings.EMAIL_HOST_USER
+        lista_de_correos_a_enviar = ['anyelserperez@gmail.com',str(correo)]
+
+
+        
+
+
+        send_mail( Titulo, Mensaje_a_enviar, email_from, lista_de_correos_a_enviar )
+        
         print("email: ",correo)
-        print("Comprobante: ",comprobante)
         
         
         #jugada_serializer = JugadaSerializer(data = request.data) #De json a objeto otra ves y guardamos
         
+        #Datos que enviaremos
+        datos = {"codigo":codigo_random}
 
         #print("El tipo de dato es: ",type(datos))
 

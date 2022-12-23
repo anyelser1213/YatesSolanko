@@ -99,7 +99,7 @@
 
 
                     //AQUI ES CUANDO ES POST
-                    fetch("enviar_codigo_email/",{
+                    fetch("recibir_codigo_email_api_view/",{
                         method:"POST",
                         //body: formData,
                         body:JSON.stringify(data),
@@ -139,7 +139,12 @@
                                 //MensajeSubliminal.innerHTML = "Informacion:<br> ";
                                 console.log("datos traidos desde la api: ",data);
                                 console.log("tipo de dato: ",typeof data);
-                                console.log("datos traidos desde la api: ",data['name']);
+                                console.log("datos traidos desde la api: ",data['codigo']);
+
+
+
+                                //Tomamos el codigo
+                                codido_recibido = data['codigo'];
 
                             }//fin del else
 
@@ -163,8 +168,27 @@
                     return 10;
                 }
 
+
+            //ESTE FORMULARIO ES PARA INGRESAR EL CODIGO
              }else if(formnumber == 1){
                 console.log("Estamos en el segundo formulario");
+
+
+                //Verificamos que el codigo es correcto
+                if(codido_recibido == input_codigo.value){
+
+                    console.log("Excelente los codigo son correctos");
+
+                }else{
+
+                    console.log("Los codigos son INCORRECTOS");
+                    return 10;
+
+                }
+
+            //ESTE FORMULARIO ES PARA ESCRIBIR OK
+             }else if(formnumber == 2){
+
              }
 
              
