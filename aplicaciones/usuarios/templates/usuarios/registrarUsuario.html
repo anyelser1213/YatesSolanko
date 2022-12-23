@@ -42,161 +42,176 @@
     <body className='snippet-body'>
         <div class="container-login100" style="background-image: url('/static/principal/assets/images/bg-04.jpg');">    
             <div class="container">
-                <div class="card"> 
-                    <div class="form"> 
-                        <div class="left-side">
-                            <ul class="progres_bar"> 
-                                <li>Personal Vitae</li>
-                                <li>Verification code</li> 
-                                <li>Finish</li>
-                            </ul> 
-                        </div> 
-                        <div class="right-side "> 
-                            <div class="main active"> 
-                                <div class="manage"> 
-                                    <h3>Create account</h3>
-                                    <p> A verification code will be sent to your cell phone and email </p> 
+                <div class="card">
+
+
+
+
+
+                    <form action="#" class="" id="FormRegistrosUsuarios" method="post">
+                        {% csrf_token %}
+                        <div class="form"> 
+                            <div class="left-side">
+                                <ul class="progres_bar"> 
+                                    <li>Personal Vitae</li>
+                                    <li>Verification code</li> 
+                                    <li>Finish</li>
+                                </ul> 
+                            </div> 
+                            <div class="right-side "> 
+                                <div class="main active"> 
+                                    <div class="manage"> 
+                                        <h3>Create account</h3>
+                                        <p> A verification code will be sent to your cell phone and email </p> 
+                                        </div> 
+                                        
+                                        <div class="input_div"> 
+                                            <div class="input_text">
+                                                <input class="written_name" name="nombreUsuario"  type="text" id="nombreUsuario"  required> 
+                                                <label>First Name</label>
+                                            </div> 
+                                            <div class="input_text"> 
+                                                <input type="text" name="apellidoUsuario" id="apellidoUsuario" required>
+                                                <label>Last Name</label> 
+                                            </div> 
+                                        </div>
+
+                                        <div class="input_div">
+                                            <div class="input_text"> 
+                                                <input type="text"  name="emailUsuario" id="emailUsuario" required>
+                                                <label>Email</label> 
+                                            </div>
+                                            <div class="input_text">
+                                                <input type="number" name="telefonoUsuario" id="telefonoUsuario" required> 
+                                                <label>Phone </label> 
+                                            </div>
+                                        </div>
+                                        <div class="input_div">
+
+                                            <div class="input_text">
+                                                <input class="pass_type" type="password" name="password1" id="password1" required>
+                                                <label>Password</label> 
+                                                <i class="fa fa-eye-slash password_eye"></i>
+                                            </div> 
+
+                                            <div class="input_text">
+                                                <input class="confirm_pass_type" type="password" name="password2" id="password2" required> 
+                                                <label>Confirm Password</label>
+                                                <i class="fa fa-eye-slash con_eye"></i>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="agree"> 
+
+                                            <span><i class="fa fa-check"></i></span>
+                                            <p>I agree to the <a href="#"> Terms of Service</a>.</p>
+            
+                                        </div> 
+
+                                        <div class="button step_1">
+                                            <button class="next_btn">Next</button> 
+                                        </div>
+                                </div><!---fin del div main active---->
+
+                                <div class="main">
+
+                                    <div class="manage">
+
+                                        <h3>A code has been sent to verify your account</h3>
+                                        <p>A code has been sent to your email, please enter it</p>
+
                                     </div> 
-                                    
+                                                                        
+                                                                            
                                     <div class="input_div"> 
-                                        <div class="input_text">
-                                            <input class="written_name" type="text" require required> 
-                                            <label>First Name</label>
-                                        </div> 
+
                                         <div class="input_text"> 
-                                            <input type="text" required>
-                                            <label>Last Name</label> 
-                                        </div> 
+
+                                            <input type="text" name="codigo_verificacion" id="codigo_verificacion" required> 
+                                            <label placeholder="- - - - -">Verification code</label>
+
+                                        </div>
+
+                                    </div> 
+
+                                    <div class="button step_2 m_top"> 
+
+                                        <button class="prev_btn">Previous</button>
+                                        <button class="next_btn">Next</button>
+
                                     </div>
+
+                                </div> <!---fin del div main---->
+                                                                                    
+                                <div class="main "> 
+
+                                    <div class="manage">
+                                        <h3>Last details</h3>
+                                        <p>Type "OK" and click the "Finish" button to finish creating the account to verify that you are not a robot.</p>
+                                    </div> 
 
                                     <div class="input_div">
-                                        <div class="input_text"> 
-                                            <input type="text" require required>
-                                            <label>Email</label> 
-                                        </div>
-                                        <div class="input_text">
-                                            <input type="number" require required> 
-                                            <label>Phone </label> 
-                                        </div>
-                                    </div>
-                                    <div class="input_div">
 
                                         <div class="input_text">
-                                            <input class="pass_type" type="password" require required>
-                                            <label>Password</label> 
-                                            <i class="fa fa-eye-slash password_eye"></i>
-                                         </div> 
+                                            <input type="text"  name="accion_final" id="accion_final" required>
+                                            <label>"Ok"</label>
+                                        </div> 
 
-                                        <div class="input_text">
-                                            <input class="confirm_pass_type" type="password" require required> 
-                                            <label>Confirm Password</label>
-                                            <i class="fa fa-eye-slash con_eye"></i>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="agree"> 
+                                    </div> 
+                                    <div class="agree_submit">
 
                                         <span><i class="fa fa-check"></i></span>
-                                        <p>I agree to the <a href="#"> Terms of Service</a>.</p>
-        
-                                    </div> 
-
-                                    <div class="button step_1">
-                                        <button class="next_btn">Next</button> 
-                                    </div>
-                            </div><!---fin del div main active---->
-
-                            <div class="main">
-
-                                <div class="manage">
-
-                                    <h3>A code has been sent to verify your account</h3>
-                                    <p>A code has been sent to your email, please enter it</p>
-
-                                </div> 
-                                                                      
-                                                                        
-                                <div class="input_div"> 
-
-                                    <div class="input_text"> 
-
-                                        <input type="text" require required> 
-                                        <label placeholder="- - - - -">Verification code</label>
-
-                                    </div>
-
-                                </div> 
-
-                                <div class="button step_2 m_top"> 
-
-                                    <button class="prev_btn">Previous</button>
-                                    <button class="next_btn">Next</button>
-
-                                </div>
-
-                            </div> <!---fin del div main---->
-                                                                                
-                            <div class="main "> 
-
-                                <div class="manage">
-                                    <h3>Last details</h3>
-                                    <p>Type "OK" and click the "Finish" button to finish creating the account to verify that you are not a robot.</p>
-                                </div> 
-
-                                <div class="input_div">
-
-                                    <div class="input_text">
-                                        <input type="text" require required>
-                                        <label>"Ok"</label>
-                                    </div> 
-
-                                </div> 
-                                <div class="agree_submit">
-
-                                    <span><i class="fa fa-check"></i></span>
-                                    <p>I hereby declare that information provided in the online registration form is true to the best of my knowledge and I accept motes,terms,disclaimer and policies by clicking "Finish" button.</p> 
-                                
-                                </div> 
-
-                                <div class="button step_2 step_4">
-
-                                    <button class="prev_btn">Previous</button> 
-                                    <button class="sbmt_btn">Finish</button>
-                                </div> 
-
-                            </div> <!---fin del div main---->
-
-
-                            <div class="main ">
-                                <div class="manage"> 
-
-                                    <h3>Congratulations 
-                                        <span class="shown_name"></span>
-                                    </h3> 
-                                    <p>Your buisness account have been successfully registered.</p> 
-
-                                </div> 
-
-                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /> 
-                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                                </svg>
-
-                                <div class="h4_txt"> 
+                                        <p>I hereby declare that information provided in the online registration form is true to the best of my knowledge and I accept motes,terms,disclaimer and policies by clicking "Finish" button.</p> 
                                     
-                                </div> 
-                            </div>  <!---fin del div main---->
+                                    </div> 
 
-                        </div><!---fin del div right-side---->
-                    </div><!---fin del div form---->
+                                    <div class="button step_2 step_4">
+
+                                        <button class="prev_btn">Previous</button> 
+                                        <button class="sbmt_btn">Finish</button>
+                                    </div> 
+
+                                </div> <!---fin del div main---->
+
+
+                                <div class="main ">
+                                    <div class="manage"> 
+
+                                        <h3>Congratulations 
+                                            <span class="shown_name"></span>
+                                        </h3> 
+                                        <p>Your buisness account have been successfully registered.</p> 
+
+                                    </div> 
+
+                                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /> 
+                                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                    </svg>
+
+                                    <div class="h4_txt"> 
+                                        
+                                    </div> 
+                                </div>  <!---fin del div main---->
+
+                            </div><!---fin del div right-side---->
+                        </div><!---fin del div form---->
+                    </form>  
+
+
+
+
+
+
                 </div><!---fin del div card---->
         
             </div><!---fin del div container---->
         </div><!---fin del div container-login100---->
         
     
-    
+        <script src="{% static 'usuarios/js/variables.js' %}"></script>
+        <script src="{% static 'usuarios/js/cookiesDjango.js' %}"></script>
         <script src="{% static 'usuarios/js/registro.js' %}"></script>
 
 

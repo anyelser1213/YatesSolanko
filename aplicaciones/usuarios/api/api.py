@@ -12,9 +12,9 @@ def verificar_email_api_view(request):
 
 
     if request.method == 'GET':
-        jugadas = Usuarios.objects.all()
-        jugadas_serializer = Usuarios(jugadas,many=True)
-        return Response(jugadas_serializer.data)
+        usuarios = Usuarios.objects.all()
+        usuarios_serializer = Usuarios(usuarios,many=True)
+        return Response(usuarios_serializer.data)
     
 
     elif request.method == 'POST':

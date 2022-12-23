@@ -1,12 +1,12 @@
 from django.urls import path
-from aplicaciones.usuarios.api.api import enviar_codigo_email_api_view
+from aplicaciones.correos.api.api import recibir_codigo_email_api_view
 
 urlpatterns = [
 
     #Normal
 
     #Apis
-    path('enviar_codigo_email/',enviar_codigo_email_api_view,name='enviar_codigo_email'),
+    path('recibir_codigo_email_api_view/',recibir_codigo_email_api_view,name='recibir_codigo_email_api_view'),
     
     
     #path('obtener_comprobantes_api_view/',obtener_comprobantes_api_view,name='obtener_comprobanteApi'),

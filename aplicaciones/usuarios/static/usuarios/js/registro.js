@@ -11,6 +11,7 @@
      var written_name= document.querySelector(".written_name");
      var shown_name= document.querySelector(".shown_name");
      
+    //Para saber en que formulario estamos    
      let formnumber= 0;
      
      var passeye= document.querySelector(".password_eye");
@@ -68,10 +69,107 @@
      next_click.forEach(function(btn){
 
          btn.addEventListener('click',function(){
-             if(!validate_form()){
-                 console.log("Estamos en el formulario",formnumber);
-             return false;
+
+
+            //Validamos todos los campos
+            if(!validate_form()){
+                console.log("Estamos en el formulario",formnumber);
+               return false;
+            }
+
+
+            if(formnumber == 0){
+                console.log("Estamos en el primer formulario");
+
+                if (input_password1.value == input_password2.value){
+                    console.log("la calve esta igual");
+                    input_password1.classList.remove('warning');
+                    input_password1.classList.remove('warning');
+
+
+                    /**AQUI VAMOS A USAR FETCH PARA LLAMAR A LA API DE CORREOS Y QUE LE ENVIE UN CODIGO */
+
+                    console.log(formData);
+
+                    var data = {
+                    //'digitos': lista_digitos,
+                    'correo': formData.get('emailUsuario'),
+                    //'comprobante': formData.get('comprobante'),
+                    };
+
+
+                    //AQUI ES CUANDO ES POST
+                    fetch("enviar_codigo_email/",{
+                        method:"POST",
+                        //body: formData,
+                        body:JSON.stringify(data),
+                        headers:{
+                            'Content-Type': 'application/json',
+                            "X-CSRFToken":csrftoken,
+                            "X-Requestd-With":"XMLGttpRequest"//Con esto indicamos que es una peticion ajax
+                        }
+
+                    //Promesa de javascript
+                    }).then(
+                        function(response){
+
+                            return response.json();
+                            
+                            //console.log(response.data);
+                        }//fin de la funcion
+
+                    ).then(
+                        function(data){
+
+                            //Esto es para saber la longitud del Json
+                            //Object.keys(data).length
+
+                            //En caso de que no haya ningun mensaje
+
+                            if(Object.keys(data).length == 0){
+
+                                console.log("No hay mensajes traidos de la api");
+                            
+                            }else{
+
+                                console.log("Hay mensajes traidos de la api");
+                                //console.log(Object.keys(data).length);
+                                //MensajeSubliminal.classList.remove("d-none","alert-danger");
+                                //MensajeSubliminal.classList.add("alert-primary"); //alert alert-success
+                                //MensajeSubliminal.innerHTML = "Informacion:<br> ";
+                                console.log("datos traidos desde la api: ",data);
+                                console.log("tipo de dato: ",typeof data);
+                                console.log("datos traidos desde la api: ",data['name']);
+
+                            }//fin del else
+
+                            
+
+
+                        }//fin de la funcion(data)
+
+                    ) //fin de then
+
+
+
+                /**AQUI FINALIZAMOS CON LA FUNCION FETCH DE API CORREOS */
+
+
+
+                }else{
+                    console.log("la calve NO esta igual");
+                    input_password1.classList.add('warning');
+                    input_password2.classList.add('warning');
+                    return 10;
+                }
+
+             }else if(formnumber == 1){
+                console.log("Estamos en el segundo formulario");
              }
+
+             
+
+             
              formnumber++;
              update_form();
              progress_forward();
@@ -136,7 +234,7 @@
 
             inpt.classList.remove('warning');
             
-            if(inpt.hasAttribute("require")){
+            if(inpt.hasAttribute("required")){
 
                 if(inpt.value.length=="0"){
                     validate=false;

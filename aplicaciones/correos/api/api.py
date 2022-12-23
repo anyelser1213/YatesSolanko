@@ -8,7 +8,7 @@ from aplicaciones.usuarios.models import Usuarios
 from aplicaciones.usuarios.api.serializers import EmailSerializer
 
 @api_view(['GET','POST'])
-def enviar_codigo_email_api_view(request):
+def recibir_codigo_email_api_view(request):
 
 
     if request.method == 'GET':
@@ -21,18 +21,18 @@ def enviar_codigo_email_api_view(request):
 
         print("datos",request.data, "Usuario: ",request.user.username,request.user.id)
         
-        id_comprobante = str(request.data.get('id_comprobante'))
+        correo = str(request.data.get('correo'))
         comprobante = str(request.data.get('comprobante'))
 
         #Datos que enviaremos
         datos = {"Mensaje":"Exitoso"}
 
-        Elemento = Usuarios.objects.get(id=id_comprobante)
-        Elemento.status="Pagado"
-        Elemento.save()
+        #Elemento = Usuarios.objects.get(id=id_comprobante)
+       # Elemento.status="Pagado"
+        #Elemento.save()
         
-        print("Elemento Jugada: ",Elemento)
-        print("id_comprobante: ",id_comprobante)
+        print("Elemento Jugada: ",correo)
+        print("email: ",correo)
         print("Comprobante: ",comprobante)
         
         
