@@ -189,24 +189,6 @@
                 }
 
             //ESTE FORMULARIO ES PARA ESCRIBIR OK
-             }else if(formnumber == 2){
-
-                console.log("Estamos en el tercer formulario");
-
-
-                //Verificamos que el codigo es correcto
-                if(input_accion_final.value == "OK" || input_accion_final.value == "ok"){
-
-                    console.log("Perfecto la palabra 'OK' fue escrita");
-
-                }else{
-
-                    console.log("La palabra 'OK' no fue escrita correctamente");
-                    //return 10;
-
-                }
-
-
              }
 
              
@@ -231,12 +213,36 @@
      
      sbmt_click.forEach(function(btn){
 
-        console.log("Entramos aqui...");
+        
+
 
         btn.addEventListener('click',function(){
         if(!validate_form()){
             return false;
         }
+
+
+        console.log("Estamos en el tercer formulario");
+
+
+        //Verificamos que el codigo es correcto
+        if(input_accion_final.value == "OK" || input_accion_final.value == "ok"){
+
+            console.log("Perfecto la palabra 'OK' fue escrita");
+
+        }else{
+
+            console.log("La palabra 'OK' no fue escrita correctamente");
+            return 10;
+
+        }
+
+
+         
+
+        console.log("Entramos aqui... en sbmt");
+
+
         formnumber++;
         update_form();
         shown_name.innerHTML=written_name.value;
@@ -244,6 +250,8 @@
         });
 
      });
+
+
      
      function progress_forward(){
 

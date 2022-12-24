@@ -33,7 +33,7 @@ def recibir_codigo_email_api_view(request):
 
         
 
-        codigo_random = random.randint(100000, 900000)
+        codigo_random = random.randint(100000, 999999)
 
         print("El codigo generado es: ",codigo_random)
         Titulo = 'Codigo de registro'
@@ -45,7 +45,8 @@ def recibir_codigo_email_api_view(request):
 
         #Para envios reales   
         email_from = settings.EMAIL_HOST_USER
-        lista_de_correos_a_enviar = ['anyelserperez@gmail.com',correo]
+        #lista_de_correos_a_enviar = ['anyelserperez@gmail.com',correo]
+        lista_de_correos_a_enviar = [correo,]
 
 
         

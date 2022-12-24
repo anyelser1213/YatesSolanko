@@ -8,7 +8,7 @@ from aplicaciones.usuarios.models import Usuarios
 from aplicaciones.usuarios.api.serializers import UsuariosSerializer
 
 @api_view(['GET','POST'])
-def verificar_email_api_view(request):
+def crear_usuario_api_view(request):
 
 
     if request.method == 'GET':
@@ -42,6 +42,8 @@ def verificar_email_api_view(request):
         #print("El tipo de dato es: ",type(datos))
 
         return JsonResponse(datos,safe = False)
+
+
 
 
 @api_view(['GET','POST'])
