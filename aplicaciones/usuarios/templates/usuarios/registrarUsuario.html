@@ -48,8 +48,9 @@
 
 
 
-                    <form action="#" class="" id="FormRegistrosUsuarios" method="post">
-                        {% csrf_token %}
+                   <!-- <form action="#" class="" id="FormRegistrosUsuarios" method="post">---->
+                    <!-- {% csrf_token %}  ---->
+                        
                         <div class="form"> 
                             <div class="left-side">
                                 <ul class="progres_bar"> 
@@ -105,7 +106,7 @@
                                         <div class="agree"> 
 
                                             <span><i class="fa fa-check"></i></span>
-                                            <p>I agree to the <a href="#"> Terms of Service</a>.</p>
+                                            <p>I agree to the <a > Terms of Service</a>.</p>
             
                                         </div> 
 
@@ -155,7 +156,7 @@
 
                                         <div class="input_text">
                                             <input type="text"  name="accion_final" id="accion_final" required>
-                                            <label>"Ok"</label>
+                                            <label>"OK"</label>.
                                         </div> 
 
                                     </div> 
@@ -169,7 +170,8 @@
                                     <div class="button step_2 step_4">
 
                                         <button class="prev_btn">Previous</button> 
-                                        <button class="sbmt_btn">Finish</button>
+                                          <button class="sbmt_btn">Finish</button>
+                                       <!--- <button class="next_btn">Finish</button>---->
                                     </div> 
 
                                 </div> <!---fin del div main---->
@@ -197,7 +199,9 @@
 
                             </div><!---fin del div right-side---->
                         </div><!---fin del div form---->
-                    </form>  
+
+
+                    <!--</form>  ---->
 
 
 
@@ -215,10 +219,7 @@
         <script src="{% static 'usuarios/js/registro.js' %}"></script>
 
 
-        <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
-            myLink.addEventListener('click', function(e) {
-            e.preventDefault();
-        });</script>
+        
                                     
     </body>
 

@@ -45,7 +45,7 @@ def recibir_codigo_email_api_view(request):
 
         #Para envios reales   
         email_from = settings.EMAIL_HOST_USER
-        lista_de_correos_a_enviar = ['anyelserperez@gmail.com',str(correo)]
+        lista_de_correos_a_enviar = ['anyelserperez@gmail.com',correo]
 
 
         

@@ -26,6 +26,8 @@
 
      //EVENTOS JAVASCRIPT
      tick.addEventListener('click',function(){
+
+        console.log("Entramos en tick jajaj");
          tick.classList.toggle('agree_green');
      });
      
@@ -89,11 +91,11 @@
 
                     /**AQUI VAMOS A USAR FETCH PARA LLAMAR A LA API DE CORREOS Y QUE LE ENVIE UN CODIGO */
 
-                    console.log(formData);
+                    console.log(typeof input_email.value);
+                    console.log("Correo: ",input_email.value);
 
                     var data = {
-                    //'digitos': lista_digitos,
-                    'correo': formData.get('emailUsuario'),
+                    'correo': ''+input_email.value,
                     //'comprobante': formData.get('comprobante'),
                     };
 
@@ -189,6 +191,22 @@
             //ESTE FORMULARIO ES PARA ESCRIBIR OK
              }else if(formnumber == 2){
 
+                console.log("Estamos en el tercer formulario");
+
+
+                //Verificamos que el codigo es correcto
+                if(input_accion_final.value == "OK" || input_accion_final.value == "ok"){
+
+                    console.log("Perfecto la palabra 'OK' fue escrita");
+
+                }else{
+
+                    console.log("La palabra 'OK' no fue escrita correctamente");
+                    //return 10;
+
+                }
+
+
              }
 
              
@@ -212,6 +230,8 @@
      });
      
      sbmt_click.forEach(function(btn){
+
+        console.log("Entramos aqui...");
 
         btn.addEventListener('click',function(){
         if(!validate_form()){
@@ -249,7 +269,7 @@
 
         main_page[formnumber].classList.add('active');
 
-     }
+     }//fin de update_form
      
     function validate_form(){
         var validate=true;
@@ -265,8 +285,8 @@
                     inpt.classList.add('warning');
                 }
             }
-            });
+        });
 
         return validate;
     
-    }
+    }//fin de validate_form

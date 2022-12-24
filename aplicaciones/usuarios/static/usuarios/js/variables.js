@@ -35,5 +35,5 @@ var input_accion_final = document.getElementById("accion_final");
 
 
 //Formulario actual
-var FormularioRegistroUsuarios = document.getElementById("FormRegistrosUsuarios");
-var formData = new FormData(FormularioRegistroUsuarios);
+//var FormularioRegistroUsuarios = document.getElementById("FormRegistrosUsuarios");
+//var formData = new FormData(FormularioRegistroUsuarios);
