@@ -42,8 +42,10 @@ urlpatterns += i18n_patterns(
 
     #TODO LO RELACIONADO A LAS APIS
     path('api-auth/', include('rest_framework.urls')),
+    path('', include('aplicaciones.usuarios.api.urls')),
     path('', include('aplicaciones.correos.api.urls')),
-    #path('', include("principal.urls")),
-    #path('tinymce/', include("tinymce.urls")),
+    
+    
+    
     prefix_default_language=False, #Por defecto se usa el lenguaje asignado en setting
  )

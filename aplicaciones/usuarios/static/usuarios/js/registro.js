@@ -230,6 +230,108 @@
 
             console.log("Perfecto la palabra 'OK' fue escrita");
 
+
+
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////                 AQUI VAMOS A CREAR AL USUARIO            ////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+            var data = {
+                'nombre': ''+input_nombre.value,
+                'apellido': ''+input_apellido.value,
+                'correo': ''+input_email.value,
+                'telefono': ''+input_telefono.value,
+                'clave': ''+input_password1.value,
+                };
+
+
+                //AQUI ES CUANDO ES POST
+                fetch("crear_usuario_api_view/",{
+                    method:"POST",
+                    //body: formData,
+                    body:JSON.stringify(data),
+                    headers:{
+                        'Content-Type': 'application/json',
+                        "X-CSRFToken":csrftoken,
+                        "X-Requestd-With":"XMLGttpRequest"//Con esto indicamos que es una peticion ajax
+                    }
+
+                //Promesa de javascript
+                }).then(
+                    function(response){
+
+                        return response.json();
+                        
+                        //console.log(response.data);
+                    }//fin de la funcion
+
+                ).then(
+                    function(data){
+
+                        //Esto es para saber la longitud del Json
+                        //Object.keys(data).length
+
+                        //En caso de que no haya ningun mensaje
+
+                        if(Object.keys(data).length == 0){
+
+                            console.log("No hay mensajes traidos de la api");
+                        
+                        }else{
+
+                            console.log("Hay mensajes traidos de la api");
+                            //console.log(Object.keys(data).length);
+                            console.log("datos traidos desde la api: ",data);
+                            console.log("tipo de dato: ",typeof data);
+                            //console.log("datos traidos desde la api: ",data['nombre']);
+
+
+
+                            //Tomamos el codigo
+                            
+
+                        }//fin del else
+
+                        
+
+
+                    }//fin de la funcion(data)
+
+                ) //fin de then
+
+
+
+
+
+
+
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }else{
 
             console.log("La palabra 'OK' no fue escrita correctamente");

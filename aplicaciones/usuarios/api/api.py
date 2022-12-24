@@ -1,5 +1,8 @@
 import json
 
+#Para autenticar los usuarios
+from django.contrib.auth import authenticate
+
 from django.http import HttpResponse, JsonResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -27,13 +30,25 @@ def crear_usuario_api_view(request):
         #Datos que enviaremos
         datos = {"Mensaje":"Exitoso"}
 
+
+    user = authenticate(username='admin', password='12')
+    if user is not None:
+        print("EL USUARIO ES NULO")
+        # A backend authenticated the credentials
+    else:
+        print("El usuario se ha autenticado")
+        # No backend authenticated the credentials
+
+        """
         Elemento = Usuarios.objects.get(id=id_comprobante)
-        Elemento.status="Pagado"
-        Elemento.save()
+                Elemento.status="Pagado"
+                Elemento.save()
+                
+                print("Elemento Jugada: ",Elemento)
+                print("id_comprobante: ",id_comprobante)
+                print("Comprobante: ",comprobante)
+        """
         
-        print("Elemento Jugada: ",Elemento)
-        print("id_comprobante: ",id_comprobante)
-        print("Comprobante: ",comprobante)
         
         
         #jugada_serializer = JugadaSerializer(data = request.data) #De json a objeto otra ves y guardamos

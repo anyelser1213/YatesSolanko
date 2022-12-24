@@ -64,6 +64,7 @@ class Index(TemplateView):
             
             #empresa_creada = Empresa.objects.filter(creado_por_id=request.user.id)
 
+        print("usuario: ",request.user)
 
         return super().dispatch(request, *args, **kwargs)
 
