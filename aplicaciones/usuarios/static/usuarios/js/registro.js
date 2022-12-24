@@ -251,7 +251,7 @@
 
 
                 //AQUI ES CUANDO ES POST
-                fetch("crear_usuario_api_view/",{
+                fetch("crear_usuario_api/",{
                     method:"POST",
                     //body: formData,
                     body:JSON.stringify(data),

@@ -2,6 +2,10 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 
+from django.contrib.auth import authenticate#Para autenticar a los usuarios
+from django.contrib.auth import login as do_login
+from django.contrib.auth import logout as do_logout
+
 #Para enviar mensajes a correos
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
@@ -59,6 +63,17 @@ class Index(TemplateView):
             #grupo="prueba"
             #print('Proyecto %s' % (grupo))
 
+
+        
+        user = authenticate(username='admin', password='1')
+        if  user is None:
+            print("El usuario no se ha autenticado ")
+            # A backend authenticated the credentials
+        else:
+            print("El usuario es este: ",user)
+            print(request)
+            do_login(request, user)
+            # No backend authenticated the credentials
             
 
             

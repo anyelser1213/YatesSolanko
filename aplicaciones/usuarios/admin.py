@@ -6,9 +6,9 @@ from .models import *
 
 
 #Con esto modificamos los titulos en el admin de django
-admin.site.site_header = 'Relancino'
-admin.site.index_title = 'Panel de control de Relancino'
-admin.site.site_title = 'Relancino Loteria'
+admin.site.site_header = 'Solanko'
+admin.site.index_title = 'Panel de control de Solanko'
+admin.site.site_title = 'Solanko'
 
 class UserAdmin(BaseUserAdmin):
     
@@ -48,7 +48,7 @@ class UserAdmin(BaseUserAdmin):
     list_filter = ('username','activo')
     
     #Para especificar que campos van a efectuar la busqueda
-    search_fields = ('username', 'nombres', 'apellidos')
+    search_fields = ('username', 'nombre', 'apellido')
     filter_horizontal = ()
 
 

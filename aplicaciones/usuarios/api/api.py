@@ -2,6 +2,8 @@ import json
 
 #Para autenticar los usuarios
 from django.contrib.auth import authenticate
+from django.contrib.auth import login as do_login
+from django.contrib.auth import logout as do_logout
 
 from django.http import HttpResponse, JsonResponse
 from rest_framework.response import Response
@@ -32,11 +34,12 @@ def crear_usuario_api_view(request):
 
 
     user = authenticate(username='admin', password='12')
-    if user is not None:
+    if user is None:
         print("EL USUARIO ES NULO")
         # A backend authenticated the credentials
     else:
         print("El usuario se ha autenticado")
+        
         # No backend authenticated the credentials
 
         """

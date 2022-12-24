@@ -88,13 +88,13 @@ class UsuariosForm(UserCreationForm):
         #fields = "__all__"
         #fields = ["username","nombres","apellidos","email","compañia","cedula","direccion","rol","telefono","imagen","is_superuser","admin"]
         #fields = ["username","apellidos","email","direccion","rol","telefono","imagen"]
-        fields = ["username","apellidos"]
+        fields = ["username","apellido"]
         widgets = {
             #"creado_por": forms.Select(attrs={'class': 'form-control' }),
             "username": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter username' }),
             #"nombres": forms.TextInput(attrs={'class': 'form-control ', 'placeholder':'Enter name' }),
             #"email": forms.EmailInput(attrs={'class': 'browser-default' , 'placeholder':'Enter email'}),
-            "apellidos": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter full name' }),
+            #"apellido": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter full name' }),
             #"cedula": forms.NumberInput(attrs={'class': 'form-control ', 'placeholder':'Enter DNI' }),
             #"compañia": forms.Select(attrs={'class': 'form-control' }),
             #"rol": forms.Select(attrs={'class': 'form-control' }),

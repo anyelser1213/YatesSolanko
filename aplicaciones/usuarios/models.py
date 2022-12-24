@@ -95,10 +95,9 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
     
     id = models.AutoField(primary_key=True)
     username = models.CharField("Username",max_length=200,unique=True)
-    nombres = models.CharField("Nombres",max_length=200,blank=True, null=True) 
-    apellidos = models.CharField("Apellidos",max_length=200,blank=True, null=True) 
-    #email = models.EmailField("Correo Electronico",max_length=150, unique=True)
-    #empresa = models.ForeignKey(Empresa,on_delete=models.CASCADE,blank=True, null=True)
+    nombre = models.CharField("Nombre",max_length=200,blank=True, null=True) 
+    apellido = models.CharField("Apellido",max_length=200,blank=True, null=True) 
+    email = models.EmailField("Correo Electronico",max_length=150, unique=True)
     activo = models.BooleanField(default=True)#Para poder ingresar al sistema  
     is_superuser = models.BooleanField(default=False)#Este es superusuario
     admin = models.BooleanField(default=False)#Para poder ingresar al admin de django
