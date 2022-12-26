@@ -21,15 +21,15 @@ from django.db.models.signals import pre_save, post_save, pre_delete, post_delet
 
 class UsuarioManager(BaseUserManager):
 
-    def create_user(self,username,password=None,admin = False,is_superuser =False,plan_elegido="gratis"):
+    def create_user(self,email,password=None,admin = False,is_superuser =False,plan_elegido="gratis"):
         print("Creamos Usuario Normal")
         #if not email:
         #    raise ValueError('El usuario debe tener un correo electronico')
 
         usuario = self.model(
             
-            username = username,
-            #email = self.normalize_email(email),
+            #username = username,
+            email = self.normalize_email(email),
             password = password,
             #rol = rol,
             admin =admin,
@@ -46,12 +46,12 @@ class UsuarioManager(BaseUserManager):
     
 
     #Funcion para usuario administrador
-    def create_superuser(self,username,password,admin = True,is_superuser = True):
+    def create_superuser(self,email,password,admin = True,is_superuser = True):
         print("Creamos superusuario")
 
         usuario = self.create_user(
-            #email = email,  
-            username = username,
+            email = email,  
+            #username = username,
             #rol = rol,
             #plan_elegido = plan_elegido,
             password = password,
@@ -72,8 +72,8 @@ def direccion_usuarios(instance, filename):
     # file will be uploaded to MEDIA_ROOT / user_<id>/<filename>
     print(instance)
     print(instance.id)
-    print(instance.username)
-    return 'usuarios/fondos/{0}/{1}'.format(instance.username, filename)
+    print(instance.email)
+    return 'usuarios/fondos/{0}/{1}'.format(instance.email, filename)
 
 
 # Heredamos de AbstractBaseUser para adaptarlo a nuestro gusto
@@ -94,7 +94,7 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
     #]
     
     id = models.AutoField(primary_key=True)
-    username = models.CharField("Username",max_length=200,unique=True)
+    #username = models.CharField("Username",max_length=200,unique=True)
     nombre = models.CharField("Nombre",max_length=200,blank=True, null=True) 
     apellido = models.CharField("Apellido",max_length=200,blank=True, null=True) 
     email = models.EmailField("Correo Electronico",max_length=150, unique=True)
@@ -121,11 +121,11 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
     #Para enlazar al manager que has creado
     objects = UsuarioManager()
 
-    USERNAME_FIELD = 'username'  #Para estableccer este campo como unico
+    USERNAME_FIELD = 'email'  #Para estableccer este campo como unico
     REQUIRED_FIELDS = ['is_superuser'] # Campos obligatorios(los pide cuando los creas por consola)
 
     def __str__(self):
-        return f'{self.username}'
+        return f'{self.email}'
     
     
     

@@ -12,12 +12,12 @@ admin.site.site_title = 'Solanko'
 
 class UserAdmin(BaseUserAdmin):
     
-    ordering = ('username',)
+    ordering = ('email',)
     
     #Aqui es cuando se va a editar
     fieldsets = (
         #Aqui es para editar
-        ("Informacion Esencial", {'fields': ('username', 'password')}),
+        ("Informacion Esencial", {'fields': ('email', 'password')}),
         ("Permisologia", {
             'classes': ('wide',),
             'fields': ('is_superuser','admin','activo','groups','user_permissions'),
@@ -28,7 +28,7 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         ("Informacion Obligatoria", {
             'classes': ('wide',),
-            'fields': ('username', 'password1', 'password2'),
+            'fields': ('email', 'password1', 'password2'),
         }),
         ("Informacion Importante", {
             'classes': ('wide',),
@@ -43,12 +43,12 @@ class UserAdmin(BaseUserAdmin):
 
 
     #Para indicarle al admin que campos queremos mostrar
-    list_display = ('id','username','is_superuser','admin','activo','fecha_creacion','ultimo_ingreso')
+    list_display = ('id','email','is_superuser','admin','activo','fecha_creacion','ultimo_ingreso')
     #list_display = ('username', 'email','is_superuser','admin','rol','plan_elegido')
-    list_filter = ('username','activo')
+    list_filter = ('email','activo')
     
     #Para especificar que campos van a efectuar la busqueda
-    search_fields = ('username', 'nombre', 'apellido')
+    search_fields = ('email', 'nombre', 'apellido')
     filter_horizontal = ()
 
 

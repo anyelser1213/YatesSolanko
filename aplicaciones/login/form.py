@@ -22,19 +22,19 @@ class loginForm(AuthenticationForm):
         #self.fields['tipo_reporte'].widget.attrs.update({'class': 'selects form-control' })
 
         #self.fields['descripcion'].widget.attrs.update({'placeholder': 'Descripción','autofocus': 'true','class': 'descripcion form-control' })
-        self.fields['username'].error_messages = {'required': 'Esto es grave aqui!'}
-        self.fields['username'].widget.attrs.update({'class': 'form-control','placeholder':'Nombre de usuario' })
+        self.fields['email'].error_messages = {'required': 'Esto es grave aqui!'}
+        self.fields['email'].widget.attrs.update({'class': 'form-control','placeholder':'Nombre de usuario' })
         self.fields['password'].widget.attrs.update({'class': 'form-control','placeholder':'Contraseña' })
 
     class Meta:
         labels = {
-            'username': ('Writer'),
+            'email': ('Writer'),
         }
         help_texts = {
-            'username': ('Probando cosas'),
+            'email': ('Probando cosas'),
         }
         error_messages = {
-            'username': {
+            'email': {
                 'max_length': ("This writer's name is too long."),
             },
         }
@@ -88,12 +88,12 @@ class UsuariosForm(UserCreationForm):
         #fields = "__all__"
         #fields = ["username","nombres","apellidos","email","compañia","cedula","direccion","rol","telefono","imagen","is_superuser","admin"]
         #fields = ["username","apellidos","email","direccion","rol","telefono","imagen"]
-        fields = ["username","apellido"]
+        fields = ["email","apellido"]
         widgets = {
             #"creado_por": forms.Select(attrs={'class': 'form-control' }),
-            "username": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter username' }),
+            #"username": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter username' }),
             #"nombres": forms.TextInput(attrs={'class': 'form-control ', 'placeholder':'Enter name' }),
-            #"email": forms.EmailInput(attrs={'class': 'browser-default' , 'placeholder':'Enter email'}),
+            "email": forms.EmailInput(attrs={'class': 'browser-default' , 'placeholder':'Enter email'}),
             #"apellido": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter full name' }),
             #"cedula": forms.NumberInput(attrs={'class': 'form-control ', 'placeholder':'Enter DNI' }),
             #"compañia": forms.Select(attrs={'class': 'form-control' }),

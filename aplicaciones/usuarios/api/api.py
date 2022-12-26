@@ -24,7 +24,7 @@ def crear_usuario_api_view(request):
 
     elif request.method == 'POST':
 
-        print("datos",request.data, "Usuario: ",request.user.username,request.user.id)
+        print("datos",request.data, "Usuario: ",request.user.email,request.user.id)
         
         id_comprobante = str(request.data.get('id_comprobante'))
         comprobante = str(request.data.get('comprobante'))
