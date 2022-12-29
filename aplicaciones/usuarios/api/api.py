@@ -30,17 +30,20 @@ def crear_usuario_api_view(request):
         miuser = Usuarios()
 
         #Siempre vamos a crear usuarios normales(Por ahora)
-        miuser.nombre = "Pedro"
-        miuser.apellido = "Mendoza"
-        miuser.email  = "pedro@gmail.com"
+        miuser.nombre = request.data.get('nombre')
+        miuser.apellido = request.data.get('apellido')
+        miuser.email  = request.data.get('correo')
         miuser.activo =True
         miuser.set_password("1")
-        miuser.admin =True
-        miuser.is_superuser = True
+        miuser.admin =False #No puede entrar al admin
+        miuser.is_superuser = False #No tiene permisos de superusuario
+
+        miuser.set_password(request.data.get('clave'))
 
         #Aqui guardamos en la base de datos
-        #miuser.save()
+        miuser.save()
 
+        print(miuser)
         #Datos que enviaremos
         datos = {"Mensaje":"Exitoso"}
 
