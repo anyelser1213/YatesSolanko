@@ -26,32 +26,25 @@ def crear_usuario_api_view(request):
 
         print("datos",request.data, "Usuario: ",request.user.email,request.user.id)
         
-        id_comprobante = str(request.data.get('id_comprobante'))
-        comprobante = str(request.data.get('comprobante'))
+        #Creamos la instancia del usuario
+        miuser = Usuarios()
+
+        #Siempre vamos a crear usuarios normales(Por ahora)
+        miuser.nombre = "Pedro"
+        miuser.apellido = "Mendoza"
+        miuser.email  = "pedro@gmail.com"
+        miuser.activo =True
+        miuser.set_password("1")
+        miuser.admin =True
+        miuser.is_superuser = True
+
+        #Aqui guardamos en la base de datos
+        #miuser.save()
 
         #Datos que enviaremos
         datos = {"Mensaje":"Exitoso"}
 
 
-    user = authenticate(username='admin', password='12')
-    if user is None:
-        print("EL USUARIO ES NULO")
-        # A backend authenticated the credentials
-    else:
-        print("El usuario se ha autenticado")
-        
-        # No backend authenticated the credentials
-
-        """
-        Elemento = Usuarios.objects.get(id=id_comprobante)
-                Elemento.status="Pagado"
-                Elemento.save()
-                
-                print("Elemento Jugada: ",Elemento)
-                print("id_comprobante: ",id_comprobante)
-                print("Comprobante: ",comprobante)
-        """
-        
         
         
         #jugada_serializer = JugadaSerializer(data = request.data) #De json a objeto otra ves y guardamos

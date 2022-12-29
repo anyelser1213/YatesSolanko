@@ -23,6 +23,10 @@ from django.utils.translation import gettext as _
 #Clases para las plantillas
 from django.views.generic import TemplateView, CreateView, UpdateView, DetailView, ListView, DeleteView
 
+
+#Modelo de usuarios
+from aplicaciones.usuarios.models import Usuarios
+
     
 
 
@@ -68,11 +72,19 @@ class Index(TemplateView):
         user = authenticate(username='admin', password='1')
         if  user is None:
             print("El usuario no se ha autenticado ")
+
+
+            print("Probando cosas jajajaj")
+
+            
+
             # A backend authenticated the credentials
         else:
             print("El usuario es este: ",user)
-            print(request)
-            do_login(request, user)
+            
+            #print(request)
+            
+            #do_login(request, user)
             # No backend authenticated the credentials
             
 

@@ -27,7 +27,7 @@ def recibir_codigo_email_api_view(request):
 
     elif request.method == 'POST':
 
-        print("datos",request.data, "Usuario: ",request.user.username,request.user.id)
+        print("datos",request.data, "Usuario: ",request.user,request.user.id)
         
         correo = str(request.data.get('correo'))
 
@@ -66,6 +66,9 @@ def recibir_codigo_email_api_view(request):
 
         return JsonResponse(datos,safe = False)
 
+
+
+"""
 
 @api_view(['GET','POST'])
 def obtener_comprobantes_api_view(request):
@@ -146,3 +149,4 @@ def obtener_comprobantes_api_view(request):
         
         
 
+"""

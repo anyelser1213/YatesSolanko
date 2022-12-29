@@ -100,8 +100,10 @@
                     };
 
 
-                    //AQUI ES CUANDO ES POST
-                    fetch("recibir_codigo_email_api_view/",{
+                    ///////////////////////////////////////////////////////////////////////////////////
+                    //AQUI LLAMAMOS A LA API PARA RECIRBIR EL CODIGO  ////////////////////////////////
+                    /////////////////////////////////////////////////////////////////////////////////
+                    fetch("recibir_codigo_email/",{
                         method:"POST",
                         //body: formData,
                         body:JSON.stringify(data),
@@ -239,6 +241,11 @@
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+            console.log("Nombre: ",input_nombre.value);
+            console.log("Apellido: ",input_apellido.value);
+            console.log("Correo: ",input_email.value);
+            console.log("Telefono: ",input_telefono.value);
+            console.log("Clave: ",input_password1.value);
 
 
             var data = {

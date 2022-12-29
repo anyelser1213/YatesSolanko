@@ -6,7 +6,7 @@ urlpatterns = [
     #Normal
 
     #Apis
-    path('recibir_codigo_email_api_view/',recibir_codigo_email_api_view,name='recibir_codigo_email_api_view'),
+    path('recibir_codigo_email/',recibir_codigo_email_api_view,name='recibir_codigo_email_api_view'),
     
     
     #path('obtener_comprobantes_api_view/',obtener_comprobantes_api_view,name='obtener_comprobanteApi'),
