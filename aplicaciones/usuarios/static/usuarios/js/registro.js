@@ -146,9 +146,28 @@
                                 console.log("datos traidos desde la api: ",data['codigo']);
 
 
+                                if (data['correo_status'] == true){
 
-                                //Tomamos el codigo
-                                codido_recibido = data['codigo'];
+                                    console.log("El CORREO esta disponible");
+                                    //Tomamos el codigo
+                                    codido_recibido = data['codigo'];
+                                }else{
+
+                                    Swal.fire({
+                                        //position: 'top-end',
+                                        icon: 'warning',
+                                        title: 'Este correo ya esta siendo utilizado por otro usuario',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                      })
+                                    console.log("El CORREO no esta disponible");
+                                    formnumber--;
+                                    update_form();
+                                    progress_forward();
+                                    return 10;
+                                }
+
+                                
 
                             }//fin del else
 

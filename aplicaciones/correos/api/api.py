@@ -29,10 +29,13 @@ def recibir_codigo_email_api_view(request):
 
         print("datos",request.data, "Usuario: ",request.user,request.user.id)
         
+        #Variables a usar en esta api
         correo = str(request.data.get('correo'))
-
+        correo_status = False
+        mensaje_alerta = ""
         
 
+        #Codigo que generaremos para enviar el codigo de verificacion
         codigo_random = random.randint(100000, 999999)
 
         print("El codigo generado es: ",codigo_random)
@@ -43,24 +46,43 @@ def recibir_codigo_email_api_view(request):
         #email_from = 'anyelserperez@gmail.com'
         #recipient_list = [settings.EMAIL_HOST_USER,"anyelserperez@gmail.com"]
 
-        #Para envios reales   
-        email_from = settings.EMAIL_HOST_USER
-        #lista_de_correos_a_enviar = ['anyelserperez@gmail.com',correo]
-        lista_de_correos_a_enviar = [correo,]
+        
 
+
+        print("Cantidad: ",Usuarios.objects.filter(email=correo).count())
+
+        #Si ya existe este correo no enviamos codigo, sino mensaje de alerta
+        if Usuarios.objects.filter(email=correo).count()>0:
+
+            mensaje_alerta = "El correo "+correo+" ya esta siendo usado"
+            print("Este correo: ",correo," ya esta en uso")
+            #Datos que enviaremos
+            datos = {"codigo":codigo_random,"mensaje_alerta":mensaje_alerta,"correo_status":False}
+            
+
+        #En caso de que el correo no este en uso, se envia el codigo de verificacion
+        else:
+            
+            #Para envios reales   
+            email_from = settings.EMAIL_HOST_USER
+            #lista_de_correos_a_enviar = ['anyelserperez@gmail.com',correo]
+            lista_de_correos_a_enviar = [correo,]
+            send_mail( Titulo, Mensaje_a_enviar, email_from, lista_de_correos_a_enviar )
+            
+            #Datos que enviaremos
+            datos = {"codigo":codigo_random,"mensaje_alerta":mensaje_alerta,"correo_status":True}
 
         
 
 
-        send_mail( Titulo, Mensaje_a_enviar, email_from, lista_de_correos_a_enviar )
         
-        print("email: ",correo)
+        
+        #print("email: ",correo)
         
         
         #jugada_serializer = JugadaSerializer(data = request.data) #De json a objeto otra ves y guardamos
         
-        #Datos que enviaremos
-        datos = {"codigo":codigo_random}
+        
 
         #print("El tipo de dato es: ",type(datos))
 

@@ -84,8 +84,9 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
         ('master','Master'),
         ('operadora','Operadora'),
         ('distribuidora','Distribuidora'),
-        ('subdistribuidor','subdistribuidor'),
+        ('subdistribuidor','Subdistribuidor'),
         ('agencia','agencia'),
+        ('normal','Normal'),
     ]
 
     #tipo_plan = [
@@ -107,7 +108,7 @@ class Usuarios(AbstractBaseUser,PermissionsMixin):
     direccion = models.CharField("Direccion",max_length=100,blank=True, null=True,default="Las Adjuntas") 
      
     
-    rol = models.CharField("Rol",max_length=150,choices=usuario_tipos,default='agencia',blank=True, null=True)
+    rol = models.CharField("Rol",max_length=150,choices=usuario_tipos,default='normal',blank=True, null=True)
 
     #plan_elegido = models.CharField("Plan",
     #    max_length=150,

@@ -193,6 +193,7 @@
                                     </svg>
 
                                     <div class="h4_txt"> 
+                                        <a href="{% url 'login:login' %}"><button type="button" class="btn btn-primary">Iniciar Sesion</button></a>
                                         
                                     </div> 
                                 </div>  <!---fin del div main---->
@@ -212,6 +213,10 @@
         
             </div><!---fin del div container---->
         </div><!---fin del div container-login100---->
+
+        <!-- JavaScript Bundle with Popper SWEEALERT2 -->
+        <script src="{% static 'vendor/sweetalert2/sweetalert2.all.js' %}"  crossorigin="anonymous"></script>
+       
         
     
         <script src="{% static 'usuarios/js/variables.js' %}"></script>
