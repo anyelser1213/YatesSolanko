@@ -24,7 +24,10 @@ class loginForm(AuthenticationForm):
         #self.fields['descripcion'].widget.attrs.update({'placeholder': 'Descripción','autofocus': 'true','class': 'descripcion form-control' })
         #self.fields['email'].error_messages = {'required': 'Esto es grave aqui!'}
         #self.fields['email'].widget.attrs.update({'class': 'form-control','placeholder':'Nombre de usuario' })
-        self.fields['password'].widget.attrs.update({'class': 'form-control','placeholder':'Contraseña' })
+       
+        #En este caso el username es = EMAIL
+        self.fields['username'].widget.attrs.update({'class': 'input100','placeholder':'Type your email' })
+        self.fields['password'].widget.attrs.update({'class': 'input100','placeholder':'Type your password' })
 
     class Meta:
         labels = {
@@ -42,7 +45,7 @@ class loginForm(AuthenticationForm):
             #"creado_por": forms.Select(attrs={'class': 'form-control' }),
             #"username": forms.TextInput(attrs={'class': 'form-control ', 'placeholder':'Enter username' }),
             #"nombres": forms.TextInput(attrs={'class': 'form-control ', 'placeholder':'Enter name' }),
-            "email": forms.EmailInput(attrs={'class': 'browser-default' , 'placeholder':'Enter email'}),
+            "email": forms.EmailInput(attrs={'class': 'input100' , 'placeholder':'Type your email'}),
             #"apellidos": forms.TextInput(attrs={'class': 'browser-default ', 'placeholder':'Enter full name' }),
             #"cedula": forms.NumberInput(attrs={'class': 'form-control ', 'placeholder':'Enter DNI' }),
             #"compañia": forms.Select(attrs={'class': 'form-control' }),
