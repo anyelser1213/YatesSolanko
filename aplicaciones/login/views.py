@@ -30,13 +30,15 @@ class Login(LoginView):
         if request.user.is_authenticated:
 
             print("Estas autenticado y vas al INDEX.HTML")
+            return redirect("principal:index")
             
 
+        #Cuando no esta autenticado
         else:
             print(request.user)
             print("No estas autenticado, eres un usuario anonimo")
             
-        return super().dispatch(request, *args, **kwargs)
+            return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
