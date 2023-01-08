@@ -7,7 +7,8 @@ from . import views
 app_name ="yates"
 
 urlpatterns = [
-    #path('', views.Index.as_view(), name='index'),
+    
+    path('charter', views.alquilar_yates.as_view(), name='alquilar_yates'),
     
     #path('index/', views.Login.as_view() ,name="login"),
     #path('logout/', views.Logout.as_view() ,name="logout"),

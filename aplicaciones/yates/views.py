@@ -30,7 +30,7 @@ from aplicaciones.usuarios.models import Usuarios
 
 class alquilar_yates(TemplateView):
 
-    template_name = "principal/index.html"
+    template_name = "yates/alquilar_yates.html"
 
     def dispatch(self, request, *args, **kwargs):
 
@@ -66,23 +66,6 @@ class alquilar_yates(TemplateView):
 
 
         
-        user = authenticate(username='admin', password='1')
-        if  user is None:
-            print("El usuario no se ha autenticado ")
-
-
-            print("Probando cosas jajajaj")
-
-            
-
-            # A backend authenticated the credentials
-        else:
-            print("El usuario es este: ",user)
-            
-            #print(request)
-            
-            #do_login(request, user)
-            # No backend authenticated the credentials
             
 
             
@@ -94,4 +77,5 @@ class alquilar_yates(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
         context['informacion'] = "Hola..."
